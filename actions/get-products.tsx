@@ -17,7 +17,7 @@ const getProducts = async (query: Query): Promise<Product[]> => {
       isFeatured: query.isFeatured,
     },
   });
-  const res = await fetch(URL, { method: "GET" });
+  const res = await fetch(url);
   return res.json();
 };
 export default getProducts;
