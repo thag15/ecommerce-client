@@ -1,4 +1,4 @@
-import { Product } from "@/types";
+import { Product } from "../../types";
 import React from "react";
 import Currency from "./ui/currency";
 import Button from "./ui/Button";
@@ -31,7 +31,8 @@ const Info: React.FC<InfoProps> = ({ data }) => {
             </div>
          </div>
          <div className="mt-10 flex items-center gap-x-3">
-            <Button className="flex items-center gap-x-2">Add to cart
+            <Button className="flex items-center gap-x-2">
+               Add to cart
                <ShoppingCart />
             </Button>
          </div>
