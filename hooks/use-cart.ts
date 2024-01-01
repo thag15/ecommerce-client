@@ -4,7 +4,7 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import toast from "react-hot-toast";
 interface useCartProps {
   items: Product[];
-  addItem: (data: string) => void;
+  addItem: (data: Product) => void;
   removeItem: (id: string) => void;
   removeAll: () => void;
 }
