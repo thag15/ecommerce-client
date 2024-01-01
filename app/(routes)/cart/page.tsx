@@ -5,14 +5,13 @@ import useCart from "@/hooks/use-cart";
 import { useEffect, useState } from "react";
 import CartItem from "./components/cart-item";
 import Summary from "./components/summary";
-
 const CartPage = () => {
     const [isMounted, setIsMounted] = useState(false);
     useEffect(() => {
         setIsMounted(true);
     }, []);
 
-    const cart = useCart()
+    const cart = useCart();
     if (!isMounted) {
         return null;
     }
@@ -23,14 +22,16 @@ const CartPage = () => {
                     <h1 className="text-3xl font-bold text-black">Shopping cart</h1>
                     <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start">
                         <div className="lg:col-span-7">
-                            {cart.items.length === 0 && <p className="text-neutral-500">No items added to cart</p>}
+                            {cart.items.length === 0 && (
+                                <p className="text-neutral-500">No items added to cart</p>
+                            )}
                             <ul>
                                 {cart.items.map((i) => (
                                     <CartItem key={i.id} data={i} />
                                 ))}
                             </ul>
                         </div>
-                        <Summary/>
+                        <Summary />
                     </div>
                 </div>
             </Container>
